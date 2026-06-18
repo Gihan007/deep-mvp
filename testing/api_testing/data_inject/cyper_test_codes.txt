@@ -1,0 +1,48 @@
+
+
+
+0- -------------- FULL ClenUp-------------
+// 1. Delete all nodes and relationships
+MATCH (n)
+DETACH DELETE n;
+
+// 2. Drop all indexes
+CALL db.indexes() YIELD name
+CALL apoc.cypher.run('DROP INDEX ' + name, {}) YIELD value
+RETURN value;
+
+// 3. Drop all constraints
+CALL db.constraints() YIELD name
+CALL apoc.cypher.run('DROP CONSTRAINT ' + name, {}) YIELD value
+RETURN value;
+
+
+1- -------------DELETE all Company, Industry, Sector Nodes with relationships -------------
+MATCH (n)
+WHERE n:Company OR n:Industry OR n:Sector
+DETACH DELETE n;
+
+2--------------- DELETE all Metrics Nodes with relationships--------------------
+MATCH (m:Metric)
+DETACH DELETE m;
+
+3- --------------DELETE all TenKChunk Nodes with relationships----------------
+MATCH (m:TenKChunk)
+DETACH DELETE m;
+
+4 - --------------DELETE specific TenKChunk Nodes with relationship------------------
+
+MATCH (m:TenKChunk {ticker: "WMT", year: "2022"})
+DETACH DELETE m;
+
+5- ---------List of TenKChunk nodes that have very few properties (excluding ticker and year).-----------
+MATCH (chunk:TenKChunk)
+WITH chunk, [k IN keys(chunk) WHERE k <> 'ticker' AND k <> 'year'] AS filtered_keys
+WHERE size(filtered_keys) < 10
+RETURN chunk;
+
+5- ---------Delete All TenKChunk nodes that have very few properties (excluding ticker and year).-----------
+MATCH (chunk:TenKChunk)
+WITH chunk, [k IN keys(chunk) WHERE k <> 'ticker' AND k <> 'year'] AS filtered_keys
+WHERE size(filtered_keys) < 10
+DETACH DELETE chunk;

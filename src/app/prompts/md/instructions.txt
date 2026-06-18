@@ -1,0 +1,189 @@
+================================================================================
+VINVEST: VALUE INVESTING REPORT GENERATOR
+================================================================================
+
+Document Title: VInvest: User Requirements for Value Investment Report Generator
+Version: 1.8
+Date: December 1, 2025
+Scope: Defines the functional and non-functional requirements for the user experience and reporting output of the VInvest application. 
+Technical implementation is out of scope.
+
+================================================================================
+1. GOAL AND PERSONA
+================================================================================
+
+The VInvest application aims to empower the modern value investor by synthesizing complex financial and qualitative 
+data into highly structured, clear, and actionable reports, mirroring the quality of analysis found in top-tier consulting firm insights.
+
+Target User: The informed individual investor, financial advisor, or analyst seeking a structured, data-driven investment thesis on publicly traded companies.
+
+================================================================================
+2. FUNCTIONAL REQUIREMENTS (FR)
+================================================================================
+
+These requirements describe the specific capabilities and content the VInvest application must deliver to the user.
+
+--------------------------------------------------------------------------------
+FR-1: COMPANY AND REPORT SELECTION
+--------------------------------------------------------------------------------
+
+ID: FR-1.1
+Description: The user shall be able to search for and select a target company using its ticker symbol or full company name.
+
+ID: FR-1.2
+Description: The system shall clearly present the available report types (
+        1- "Company Performance & Investment Thesis," 
+        2- "Industry Deep Dive," 
+        3-  "Custom Analysis").
+
+ID: FR-1.3
+Description: The user shall be able to set the time horizon for historical data included in the report (e.g., "Last 5 Years," "Last 10 Years," "Since IPO").
+
+ID: FR-1.4
+Report Refinement via Chat: The user shall be able to refine any generated report (FR-2.1, FR-2.2, FR-2.3) using the natural language chat interface.
+Examples of refinements include:
+- Change the length and focus: "Make this a one-page summary."
+- Adjust the analytical emphasis: "Focus the conclusion on long-term debt trends."
+- Target a specific audience: "Rewrite the conclusion for an institutional client."
+- Add specific data points: "Include the dividend payout ratio for the last three years."
+
+
+
+
+--------------------------------------------------------------------------------
+FR-2: INVESTMENT REPORT GENERATION
+--------------------------------------------------------------------------------
+
+The system shall generate structured reports across multiple core types of investment analysis.
+
+================================================================================
+FR-2.1: THE "COMPANY PERFORMANCE & INVESTMENT THESIS" REPORT (PRIMARY REPORT)
+================================================================================
+
+This report is designed to address the central question: "Should I buy this company, and why?" (Conclusion First Structure)
+
+# Executive Summary & Recommendation
+A concise, single-page summary presenting the final investment recommendation (e.g., Strong Buy, Hold, Sell), the rationale, and the company's competitive ranking.
+
+# Detailed Investment Thesis Statement
+Synthesis of the findings into a clear, concluding summary statement justifying the "Buy/Hold/Sell" recommendation and outlining the required conditions for the investment's success.
+
+# Economic Moat Assessment
+The report shall contain a dedicated section defining the company's sustainable competitive advantage ("Economic Moat"), categorized (e.g., Wide, Narrow, None) and supported by qualitative evidence (e.g., network effects, brand value, cost advantages).
+
+# Industry Disruption Analysis
+The report shall provide an overview of the target company's industry, including overall growth trajectory, key trends, and a specific analysis of any major impending or recent disruptions (technology, regulation, etc.) that could impact the company's moat or growth.
+
+# Competitive Context & Peer Identification
+The report shall automatically identify and list 5-10 direct, relevant industry peers.
+
+# Relative Performance Benchmarking
+The report shall compare the target company against its identified peers using the following metrics, presented in clear tables and charts: Intrinsic Value vs. Market Value Differential, Return on Invested Capital (ROIC), 5-Year Revenue Growth (CAGR), and Earnings Yield.
+
+# Industry Ranking Score
+The report shall calculate and display a clear, quantifiable ranking (e.g., "2nd of 8 Peers") based on the composite strength of the company's core value metrics (FR-2.1.6).
+
+# Qualitative & Growth Catalysts
+The report shall synthesize and highlight several key, interesting facts and the latest news that directly impact the company's future growth prospects (last 12 months).
+
+================================================================================
+FR-2.2: THE "INDUSTRY DEEP DIVE" REPORT
+================================================================================
+
+This report is designed to provide a comprehensive, top-down analysis of a selected industry, its structure, and its profitability dynamics. (Conclusion First Structure)
+
+ID: FR-2.2.1
+Report Section/Requirement: Synthesis & Strategic Recommendations
+The initial section shall synthesize all core insights (Market Size, Competitive Forces, Profit Pools, Trends) into a clear, concluding thesis on the industry's overall attractiveness, highlighting 2-3 actionable investment recommendations.
+
+ID: FR-2.2.2
+Report Section/Requirement: Major Trends & Value Impact Analysis
+A dedicated section analyzing the Top 3 major trends and disruptions (technological, regulatory, or economic) currently affecting the industry. It must include actionable insights on what companies should watch for and a forecast of how these trends will impact the intrinsic value and future potential of companies within the sector.
+
+ID: FR-2.2.3
+Report Section/Requirement: Industry Segmentation & Size
+The report shall quantify the total addressable market (TAM) for the industry, define its key sub-segments (e.g., geographical, product type), and provide 5-year historical and projected growth rates for the overall market.
+
+ID: FR-2.2.4
+Report Section/Requirement: Competitive Forces Analysis
+The report shall perform a qualitative and quantitative analysis of the industry structure based on Porter's Five Forces (e.g., Rivalry, New Entrants, Substitutes, Supplier/Buyer Power).
+
+ID: FR-2.2.5
+Report Section/Requirement: Profit Pool Mapping
+The report shall visually map the industry's value chain, clearly identifying where profit pools are concentrated and predicting potential shifts in value capture over the next 3 years.
+
+ID: FR-2.2.6
+Report Section/Requirement: Key Drivers and Barriers
+The report shall analyze and list the primary forces driving growth (e.g., demographic shifts, technological adoption) and the major structural barriers to entry and expansion (e.g., regulatory hurdles, capital intensity).
+
+ID: FR-2.2.7
+Report Section/Requirement: Aggregate Financial Benchmarks
+The report shall present consolidated industry-wide financial metrics, including average ROIC, median debt-to-equity ratio, and average gross profit margin, benchmarked against broader sector data.
+
+================================================================================
+FR-2.3: THE "CUSTOM ANALYSIS" REPORT
+================================================================================
+
+This report is designed to allow expert users to perform ad-hoc, comparative analysis defined by natural language queries.
+
+ID: FR-2.3.1
+Report Section/Requirement: Chatbot/Query Input Mechanism
+The system shall provide a chat-based natural language interface where the user can define the scope and question for the custom report (e.g., "Compare Tesla and Ford on ROIC over the last 5 years").
+
+ID: FR-2.3.2
+Report Section/Requirement: Multi-Company Comparison
+The system must be able to generate tables and charts comparing a user-defined group of companies across specified value investing metrics (e.g., metrics from FR-2.1.6).
+
+ID: FR-2.3.3
+Report Section/Requirement: Multi-Industry Comparison
+The system must be able to compare aggregated industry financial benchmarks (e.g., median ROIC, average revenue growth) for a user-defined set of industries.
+
+ID: FR-2.3.4
+Report Section/Requirement: Industry Performance Ranking
+The system must be able to rank a user-defined set of industries based on a composite score derived from value metrics (e.g., "Which of the FANG industries is currently the most attractively valued by intrinsic value?").
+
+ID: FR-2.3.5
+Report Section/Requirement: Synthetic Narrative Output
+The final report output must begin with a clear, concise conclusion that directly answers the user's query (FR-2.3.1) and provides the supporting data and visualizations underneath.
+
+--------------------------------------------------------------------------------
+FR-3: OUTPUT AND EXPORT
+--------------------------------------------------------------------------------
+
+The user shall be able to download the generated report in a professionally formatted PDF document, optimized for high-quality printing and sharing.
+The user shall be able to view all charts and tables directly within the web application interface with interactive tooltips for data points.
+The report output must include proper citation or a data source reference for all financial metrics and news snippets.
+The report's design must be visually clean, professional, and minimalist, using strong white space and clear typography to prioritize readability and the flow of the narrative (McKinsey-style).
+
+================================================================================
+3. NON-FUNCTIONAL REQUIREMENTS (NFR)
+================================================================================
+
+These requirements define the criteria used to judge the operation of the system, focusing on quality attributes.
+
+--------------------------------------------------------------------------------
+NFR-1: DATA QUALITY AND INTEGRITY
+--------------------------------------------------------------------------------
+
+
+Accuracy: All quantitative metrics (e.g., ROIC, Intrinsic Value) must be calculated using consistent, verifiable methodologies and standardized financial statement data.
+Timeliness: All data used in the report, including financial statements and news, must be updated and available within 24 hours of public release.
+Consistency: The calculation methodology used for a metric (e.g., calculation of ROIC) shall be documented and applied consistently across all companies and reports.
+
+--------------------------------------------------------------------------------
+NFR-2: PERFORMANCE AND SPEED
+--------------------------------------------------------------------------------
+
+Generation Speed: The primary "Company Performance & Investment Thesis" report (FR-2.1) must be generated and rendered in the application interface within a maximum of 10 seconds of submission.
+Search Latency: Company searches (FR-1.1) must return results in under 500 milliseconds.
+
+--------------------------------------------------------------------------------
+NFR-3: APPLICATION INTERFACE AND WORKFLOW
+--------------------------------------------------------------------------------
+
+Accessibility: The application interface must be fully responsive and optimized for use on desktop, tablet, and mobile devices.
+Intuition: The report generation process must be intuitive, requiring a minimal number of steps (ideally 3 clicks or less) from login to report submission.
+
+================================================================================
+END OF DOCUMENT
+================================================================================

@@ -1,0 +1,144 @@
+:root {}
+
+/* Typography & rendering */
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Top bar and tabs */
+.topbar {
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.topbar .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+.topbar .brand .logo {
+  width: 22px;
+  height: 22px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  background: radial-gradient(120% 120% at 30% 20%, #19c49a 0%, #10a37f 60%, #0e8a6c 100%);
+  color: white;
+  font-size: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+.menu-btn { display: none; margin-left: auto; }
+
+.tabs {
+  /* Fill full width and divide space equally among tabs */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(0deg, rgba(0,0,0,0.00), rgba(255,255,255,0.02));
+  width: 100%;
+}
+.tabs .btn {
+  background: rgba(255,255,255,0.02);
+  border-color: var(--border);
+  width: 100%;
+  justify-self: stretch;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 10px;
+}
+.tabs .btn:hover {
+  background: rgba(37,99,235,0.08);
+  border-color: rgba(37,99,235,0.35);
+}
+/* Use dark blue for active tab instead of green */
+.tabs .btn.primary {
+  background: linear-gradient(135deg, var(--tab-accent, #2563eb) 0%, var(--tab-accent-2, #1e40af) 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 8px 22px rgba(37,99,235,0.28), inset 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+/* New chat buttons use dark blue across all tabs */
+.sidebar-header .btn.primary {
+  background: var(--bubble-human-dark, #172b44);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* Toggles */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.toggle > input[type='checkbox'] {
+  appearance: none;
+  width: 34px;
+  height: 20px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.toggle > input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+.toggle > input[type='checkbox']:checked {
+  background: var(--primary);
+  border-color: transparent;
+}
+.toggle > input[type='checkbox']:checked::after {
+  transform: translateX(14px);
+}
+.toggle > span {
+  color: var(--muted);
+}
+
+/* Focus styles for better a11y */
+.btn:focus-visible,
+.icon-button:focus-visible,
+.input:focus-visible,
+.session-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(16,163,127,0.35);
+  border-color: var(--primary);
+}
+
+/* Subtle scrollbar styling */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.2);
+}

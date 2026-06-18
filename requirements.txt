@@ -1,0 +1,93 @@
+# Optimized Requirements - Chatbot Essentials
+# Simplified from 115+ packages by removing unused integrations
+
+#=========================================================================================
+#======================== This required PYTHGON 3.12.10 version ==========================
+#==========================================================================================
+
+
+# === AI/ML Core (Keep only what you use) ===
+openai==1.99.9
+
+# === LangChain Core (Essential) ===
+langchain==0.3.27
+langchain-community==0.3.25
+langchain-experimental==0.3.4
+
+# === LangChain Integrations (ONLY what you actually use) ===
+langchain-openai==0.3.23
+langchain-neo4j==0.4.0
+
+# Google GenAI (Gemini) - required by Report_Generation_Agent_Graph and model initializers
+# langchain-google-genai==2.1.8
+# google-generativeai==0.8.5
+
+
+# === LangGraph ===
+langgraph==0.6.8
+langgraph-checkpoint-sqlite==2.0.10
+aiosqlite==0.20.0
+langserve==0.3.1
+langsmith==0.3.45
+langgraph-supervisor==0.0.29
+
+# === Vector Database (Choose ONE) ===
+chromadb==1.0.15
+
+# === Document Processing (Streamlined) ===
+python-docx==1.2.0                # Word docs
+python-pptx==1.0.2                # PowerPoint
+openpyxl==3.1.5                   # Excel
+
+# PDF tools - you probably only need 1-2 of these:
+PyPDF2==3.0.1                     # Simple PDF reading
+reportlab==4.4.5                  # PDF generation
+
+# === Media/Audio ===
+pydub==0.25.1                     # Audio processing
+
+# === Web Framework ===
+fastapi==0.115.12
+python-multipart==0.0.20          # For file uploads
+uvicorn==0.34.3
+
+
+# === Data Science (Core) ===
+pandas==2.3.1
+numpy==2.2.6
+scipy==1.16.0
+scikit-learn==1.7.2
+matplotlib==3.10.3
+seaborn==0.13.2                
+
+# === Web Scraping ===
+beautifulsoup4==4.13.4
+ddgs==9.5.2                  
+
+# === Market Data Fallback ===
+yfinance==1.0
+
+# === Computer Vision (Choose what you need) ===
+pillow==11.3.0
+
+# === NLP ===
+nltk==3.9.1
+tiktoken==0.9.0
+
+# === Memory/Agents ===
+mem0ai==0.1.116
+deepagents==0.0.5 
+
+# === Utilities ===
+python-dotenv==1.1.0
+pydantic==2.11.7
+pydantic-settings==2.10.1
+rich==14.0.0
+tqdm==4.67.1
+click==8.2.1
+validators==0.35.0
+tavily-python==0.7.9
+
+# === Binarize ===
+Cython==3.1.2
+

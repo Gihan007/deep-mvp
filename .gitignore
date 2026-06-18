@@ -1,0 +1,42 @@
+# Local environment and secrets
+.env
+.env.*
+!.env.template
+
+# Python virtual environments
+venv/
+gihan/
+getdeep/
+
+# Python cache and tooling output
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node dependencies and build output
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+
+# Runtime data and generated files
+data/
+src/databases/
+testing/code testing/
+testing/test_results/
+**/.ipynb_checkpoints/
+README.pdf
+testing/code testing/chroma_databse/
+*.sqlite3
+*.db
+*.db-*
+temp_charts/
+temp_data/
+temp_images/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
