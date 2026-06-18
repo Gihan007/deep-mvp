@@ -208,7 +208,6 @@ Get-Deep/
 ├── react-chatgpt_original/      # Frontend React application
 ├── scripts/                     # Utility scripts
 ├── testing/                     # Test files and API testing
-├── docs/                        # Documentation (auto-generated)
 ├── docker-compose.yml           # Multi-service configuration
 ├── Dockerfile                   # Container build instructions
 └── requirements.txt             # Python dependencies
@@ -243,7 +242,6 @@ cd testing/
 ## 🆘 Support
 
 For support and questions:
-- Check the documentation in the `docs/` directory
 - Review the testing examples in `testing/`
 - Examine the configuration options in `config.py`
 

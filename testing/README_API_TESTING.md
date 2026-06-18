@@ -340,8 +340,6 @@ When reporting issues, include:
 
 ## 📚 Additional Resources
 
-- **API Documentation**: `/docs/api/endpoints.md`
-- **Example Usage**: `/docs/api/examples.md`
 - **Legacy Tests**: `/testing/api_testing/`
 
 ## ⚡ Quick Reference
